@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGNOU PGDCA Guidance Session | Symbiotic Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-light: #3b82f6;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --accent-dark: #d97706;
+            --dark: #1f2937;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --feature-purple: #7e22ce;
+            --feature-teal: #0d9488;
+            --feature-orange: #ea580c;
+            --feature-pink: #db2777;
+            --feature-gold: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            color: var(--dark);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        .shape {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape.circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            top: 10%;
+            left: 5%;
+        }
+        
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 100px solid var(--feature-purple);
+            top: 20%;
+            right: 8%;
+            animation-delay: -2s;
+        }
+        
+        .shape.square {
+            width: 90px;
+            height: 90px;
+            background: var(--feature-orange);
+            bottom: 15%;
+            left: 10%;
+            border-radius: 15px;
+            animation-delay: -4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .logo-subtext {
+            font-size: 12px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .about-link {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .join-link {
+            background: linear-gradient(135deg, var(--feature-orange), #f97316);
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+        }
+
+        .header-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .program-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--darker);
+        }
+
+        .intro-box {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .intro-box h2 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .intro-box p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* Questions Section */
+        .questions {
+            padding: 60px 0;
+            background: var(--white);
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--darker);
+            margin-bottom: 15px;
+        }
+
+        .question-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .question-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .question-title {
+            font-size: 1.3rem;
+            color: var(--darker);
+        }
+
+        .question-content {
+            padding-left: 55px;
+        }
+
+        .question-content p {
+            margin-bottom: 15px;
+        }
+
+        .solution-highlight {
+            background: linear-gradient(135deg, var(--accent), #fbbf24);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            border-radius: 20px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: white;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            margin-right: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Schedule Button */
+        .schedule-button {
+            display: inline-block;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .schedule-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Timed Popup */
+        .timed-popup {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--feature-orange), #f97316);
+            color: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            z-index: 1500;
+            max-width: 350px;
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .popup-header h3 {
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .popup-close {
+            cursor: pointer;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .popup-close:hover {
+            opacity: 1;
+        }
+
+        .popup-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .popup-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .popup-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .popup-item i {
+            font-size: 1.2rem;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .popup-button {
+            display: inline-block;
+            background: white;
+            color: var(--feature-orange);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            text-align: center;
+        }
+
+        .popup-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #fffbeb;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+
+        .disclaimer h3 {
+            color: var(--darker);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .disclaimer h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            color: var(--light);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .intro-box {
+                padding: 20px;
+            }
+            
+            .question-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .question-icon {
+                margin-bottom: 10px;
+            }
+            
+            .question-content {
+                padding-left: 0;
+            }
+            
+            .price-tag {
+                font-size: 2rem;
+            }
+            
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .timed-popup {
+                max-width: 90%;
+                right: 5%;
+                left: 5%;
+                bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .header-link {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .program-badge {
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+            
+            .intro-box h2 {
+                font-size: 1.3rem;
+            }
+            
+            .question-title {
+                font-size: 1.1rem;
+            }
+            
+            .price-tag {
+                font-size: 1.8rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background shapes -->
+    <div class="shape circle"></div>
+    <div class="shape triangle"></div>
+    <div class="shape square"></div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-text">Symbiotic Learning</div>
+                <div class="logo-subtext">A unit of Symbiotic Edusolutions Pvt. Ltd.</div>
+            </div>
+            <div class="header-buttons">
+                <a href="https://symbioticlearning.com/" class="header-link about-link">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <a href="https://mfrzk.courses.store/718852?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp" class="header-link join-link">
+                    <i class="fas fa-user-plus"></i> Join Session
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="program-badge">IGNOU PGDCA Guidance Program</div>
+            <h1>Resolve Your IGNOU PGDCA Confusion</h1>
+            
+            <div class="intro-box">
+                <h2>About This Counseling Session</h2>
+                <p>This exclusive guidance session is specifically designed for IGNOU PGDCA students who are facing challenges with result declarations, assignment mark updates, re-evaluation processes, and understanding the examination system.</p>
+                <p>Our experienced counselors, who have helped hundreds of IGNOU students, will provide clear, actionable guidance on navigating these common issues and ensuring you stay on track to successfully complete your program.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Questions Section -->
+    <section class="questions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Common PGDCA Student Concerns</h2>
+                <p>We address the most frequent issues faced by IGNOU PGDCA students</p>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="question-title">Are you confused about the re-evaluation process?</h3>
+                </div>
+                <div class="question-content">
+                    <p>Many students receive lower marks than expected or even fail certain papers, leaving them unsure about how to proceed with re-evaluation.</p>
+                    <p>The re-evaluation process at IGNOU can be confusing - knowing when to apply, how to fill out the form correctly, what fees to pay, and understanding the timeline for results.</p>
+                    <div class="solution-highlight">
+                        <i class="fas fa-lightbulb"></i> Our session will provide step-by-step guidance on the entire re-evaluation process
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="question-title">Submitted assignments months ago but marks not updated?</h3>
+                </div>
+                <div class="question-content">
+                    <p>It's a common frustration among IGNOU students - you submitted your assignments on time, but months later, the portal still shows "not submitted" or "not updated."</p>
+                    <p>Without updated assignment marks, you can't be sure of your standing, and it creates anxiety about whether your submission was received and evaluated properly.</p>
+                    <div class="solution-highlight">
+                        <i class="fas fa-lightbulb"></i> We'll explain the assignment evaluation system and what steps to take when marks aren't updated
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="question-title">How are marks calculated with lab and practicals?</h3>
+                </div>
+                <div class="question-content">
+                    <p>Understanding how IGNOU calculates your final marks - combining theory exam scores, assignment marks, and practical/lab scores - is confusing for many PGDCA students.</p>
+                    <p>Without clarity on this calculation, it's difficult to know where you stand academically and what to focus on for improvement.</p>
+                    <div class="solution-highlight">
+                        <i class="fas fa-lightbulb"></i> We'll break down the mark calculation formula and help you understand your scorecard
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="question-title">Uncertain about exam form submission deadlines?</h3>
+                </div>
+                <div class="question-content">
+                    <p>Many students miss important deadlines for exam form submission, which delays their progress by an entire semester.</p>
+                    <p>Keeping track of multiple deadlines for different courses and remembering to submit forms on time can be challenging.</p>
+                    <div class="solution-highlight">
+                        <i class="fas fa-lightbulb"></i> We'll provide a clear timeline of important dates and reminders for form submissions
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="question-title">How to prepare for practical exams and viva voce?</h3>
+                </div>
+                <div class="question-content">
+                    <p>Practical exams and viva voce can be particularly stressful for distance learning students who may not have regular access to lab facilities or guidance.</p>
+                    <p>Many students are unsure about the format, evaluation criteria, and how to best prepare for these hands-on components.</p>
+                    <div class="solution-highlight">
+                        <i class="fas fa-lightbulb"></i> We'll share preparation strategies and insights into what examiners look for during practical assessments
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <h2>Live Counseling & Guidance Session</h2>
+            <p>Join our exclusive webinar where we'll address all these concerns and more, providing clear answers and actionable guidance specifically for IGNOU PGDCA students.</p>
+            
+            <div class="price-tag">
+                <span class="original-price">₹300</span>
+                <span>₹150 for first 50 students</span>
+            </div>
+            
+            <p><i class="fas fa-calendar-check"></i> Date: 25th July, 2025 | <i class="fas fa-clock"></i> Time: 4:00 PM - 6:00 PM IST</p>
+            <p><i class="fas fa-video"></i> Platform: Live via Zoom</p>
+            
+            <a href="https://mfrzk.courses.store/718852?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp" class="cta-button">Reserve Your Spot Now</a>
+            
+            <a href="#" class="schedule-button" onclick="openDetails(); return false;">
+                <i class="fas fa-calendar-alt"></i> View Schedule Details
+            </a>
+        </div>
+    </section>
+
+    <!-- Timed Popup -->
+    <div class="timed-popup" id="timedPopup">
+        <div class="popup-header">
+            <h3><i class="fas fa-calendar-check"></i> Session Details</h3>
+            <div class="popup-close" onclick="closePopup()">×</div>
+        </div>
+        <div class="popup-content">
+            <p>Don't miss this exclusive session designed specifically for IGNOU PGDCA students!</p>
+            
+            <div class="popup-details">
+                <div class="popup-item">
+                    <i class="fas fa-calendar-day"></i>
+                    <div>
+                        <strong>Date:</strong> 25th July, 2025
+                    </div>
+                </div>
+                
+                <div class="popup-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Time:</strong> 4:00 PM - 6:00 PM IST
+                    </div>
+                </div>
+                
+                <div class="popup-item">
+                    <i class="fas fa-video"></i>
+                    <div>
+                        <strong>Platform:</strong> Zoom (Link will be provided after registration)
+                    </div>
+                </div>
+                
+                <div class="popup-item">
+                    <i class="fas fa-rupee-sign"></i>
+                    <div>
+                        <strong>Fee:</strong> ₹150 (Special offer for first 50 registrations)
+                    </div>
+                </div>
+            </div>
+            
+            <a href="https://mfrzk.courses.store/718852?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp" class="popup-button" target="_blank">
+                <i class="fas fa-sign-in-alt"></i> Register Now
+            </a>
+        </div>
+    </div>
+
+    <!-- Disclaimer Section -->
+    <div class="container">
+        <div class="disclaimer">
+            <h3><i class="fas fa-exclamation-circle"></i> Important Disclaimer</h3>
+            <p>We are not officially recognized by or affiliated with Indira Gandhi National Open University (IGNOU). The information and guidance provided are based on our experience as former IGNOU students and from publicly available resources. Always verify critical information through official IGNOU channels.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Symbiotic Learning. All Rights Reserved.</p>
+            <p>A unit of Symbiotic Edusolutions Pvt. Ltd.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to show the timed popup
+        function showTimedPopup() {
+            setTimeout(() => {
+                document.getElementById('timedPopup').style.display = 'block';
+            }, 15000); // Show after 15 seconds
+        }
+        
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('timedPopup').style.display = 'none';
+        }
+        
+        // Function to open program details
+        function openDetails() {
+            document.getElementById('timedPopup').style.display = 'block';
+        }
+        
+        // Show the popup on page load
+        window.onload = showTimedPopup;
+        
+        // Add animation to elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Animate question cards
+        const questionCards = document.querySelectorAll('.question-card');
+        questionCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+        // Animate intro box
+        const introBox = document.querySelector('.intro-box');
+        introBox.style.opacity = 0;
+        introBox.style.transform = 'translateY(20px)';
+        introBox.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(introBox);
+    </script>
+</body>
+</html>
